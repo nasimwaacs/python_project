@@ -1,3 +1,8 @@
+'''
+    Name    : Nasim
+    Program : Do Graphics
+    Date    : May 22, 2024 1:00 PM
+'''
 import pygame, sys
 from pygame.locals import QUIT
 
