@@ -1,17 +1,17 @@
 '''
     Name    : Nasim
-    Program : Do Graphics
-    Date    : May 22, 2024 1:00 PM
+    Program : Bouncing Balls
+    Date    : May 28, 2024 1:00 PM
 '''
 import pygame, sys
 from pygame.locals import QUIT
+import ball
 
 pygame.init()
 
 screen = pygame.display.set_mode((500, 500))
 
-blockX = 10
-blockY = 300
+b1 = ball.Ball(300, 300, 20)
 
 wallX = 400
 
@@ -25,14 +25,9 @@ while True:
             pygame.quit()
             sys.exit()
 
-
     screen.fill ("white")
 
-    # Draw the boundary 
-    pygame.draw.line(screen, "red", (wallX, 0), (wallX, wallX))
-
-    # Draw the block
-    pygame.draw.rect(screen, "blue", (blockX, blockY, 50, 50))
-    blockX = blockX + 1
+    b1.update()
+    b1.draw(screen)
 
     pygame.display.update()
