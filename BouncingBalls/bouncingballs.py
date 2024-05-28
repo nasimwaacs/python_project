@@ -11,7 +11,7 @@ pygame.init()
 
 screen = pygame.display.set_mode((500, 500))
 
-b1 = ball.Ball(300, 300, 20)
+b1 = ball.Ball(screen)
 
 wallX = 400
 
@@ -27,7 +27,6 @@ while True:
 
     screen.fill ("white")
 
-    b1.update()
-    b1.draw(screen)
+    b1.move()
 
     pygame.display.update()
