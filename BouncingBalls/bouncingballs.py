@@ -11,18 +11,24 @@ pygame.init()
 
 screen = pygame.display.set_mode((500, 500))
 
-balls = []
+balls = []         
 
-for i in range(10000):
-    #r = random.randint(0, 255)
-    #g = random.randint(0, 255)
-    #b = random.randint(0, 255)
+for i in range(5000):
+    speedX = random.randint(-5, 5)
+    speedY = random.randint(-5, 5)
+    radius = random.randint(10, 20)
+
+    b = random.randint(150, 255)
+    g = random.randint(150, 255)
+    r = random.randint(230, 255)
+    '''
     r = 0
     g = 0
-    b = 155
-    a = random.randint(10, 255)
+    b = 155'''
+    a = random.randint(10, 30)
+    col = pygame.Color(r, g, b, a)
 
-    b = ball.Ball(screen, random.randint(50, 300), random.randint(50, 400), random.randint(2, 10), random.randint(-5, 5), random.randint(-5, 5), (r, g, b, a))
+    b = ball.Ball(screen, random.randint(5, 495), random.randint(5, 495), radius, speedX, speedY, col)
     balls.append(b)
 
 clock = pygame.time.Clock()
