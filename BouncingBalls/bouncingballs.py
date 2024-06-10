@@ -28,8 +28,8 @@ for i in range(5000):
     a = random.randint(10, 30)
     col = pygame.Color(r, g, b, a)
 
-    b = ball.Ball(screen, random.randint(5, 495), random.randint(5, 495), radius, speedX, speedY, col)
-    balls.append(b)
+    randomBall = ball.Ball(screen, random.randint(5, 495), random.randint(5, 495), radius, speedX, speedY, col)
+    balls.append(randomBall)
 
 clock = pygame.time.Clock()
 
@@ -43,7 +43,7 @@ while True:
 
     screen.fill ("white")
 
-    for b in balls:
-        b.move()
+    for eachBall in balls:
+        eachBall.move()
 
     pygame.display.update()
